@@ -1,6 +1,13 @@
 
 
-    <%= paginate @places %>
+<div class= 'list_title col-10 offset-1'> The Best of Boulder</div>
+
+   <div class = 'list_title col-10 offset-1'>
+    <%= paginate @places, 
+    theme: 'twitter-bootstrap-4',
+    pagination_class: "pagination-sm",
+    nav_class: "d-inline-b" %> </div>
+
     <% @places.each do |place| %>
 
    <div class="booyah-box col-10 offset-1">
