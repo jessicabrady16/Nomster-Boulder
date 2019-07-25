@@ -9,18 +9,40 @@
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   margin-top: 10px;
   margin-bottom: 15px;
-    }
+  font-family: 'introheadr-base';
+  font-size: 20px; 
+  }
+
+  .places_title {
+    font-family: 'introscriptr-h2base';
+  }
+
   h1, h2, h3, h4, h5, h6 {
     margin:0;
     padding:0;
   }
 
+  i {
+    font-weight: bold;
+  }
+
   body {
-    background: image_url('tree_bark.png');
+    background: image_url('colorful-bokeh-texture-65.jpg');
+    background-size: cover;
     font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    color: #260300
   }
 
   .navbar {
-    background: image_url('pool_table.png');
-    box-shadow: 0px 1px 3px #2a2a2a;
+    background: image_url('mixed-watercolor-paint-texture-6.jpg');
+    box-shadow: 0px 1px 3px #260300;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    letter-spacing: -0.3px;
+    color:#260300
   }
+
+  .navbar-inverse .navbar-brand {
+    color:#260300;
+    font-family: 'introrustg-base2line';
+    font-size: 40px;
+   }
