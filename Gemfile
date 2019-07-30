@@ -7,6 +7,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'simple_form'
+gem "font-awesome-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

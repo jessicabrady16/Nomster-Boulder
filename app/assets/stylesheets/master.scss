@@ -1,4 +1,5 @@
   @import "bootstrap";
+  @import "font-awesome";
 
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -11,6 +12,7 @@
   margin-bottom: 15px;
   font-family: 'introheadr-base';
   font-size: 20px; 
+  color: #260300
   }
 
   .places_title {
@@ -32,6 +34,10 @@
     color: #260300
   }
 
+  .nav-link {
+    color: #260300
+  }
+
   .navbar {
     background: image_url('mixed-watercolor-paint-texture-6.jpg');
     box-shadow: 0px 1px 3px #260300;
@@ -39,7 +45,7 @@
     color:#260300
   }
 
-  .navbar-inverse .navbar-brand {
+  .navbar .navbar-brand {
     color:#260300;
     font-family: 'introrustg-base2line';
     font-size: 40px;
@@ -57,5 +63,9 @@
     font-family: 'introheadr-base';
     font-size: 20px;
     font-weight: bold;
+   }
+
+   .nav-item {
+     font-size: 20px;
    }
 
