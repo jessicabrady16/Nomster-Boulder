@@ -6,6 +6,7 @@ ruby '2.6.3'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
