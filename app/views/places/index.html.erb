@@ -1,18 +1,18 @@
-
-
 <div class= 'list_title col-10 offset-1'> NOM NOM NOM BOULDER!</div>
-
-   <div class = 'list_title col-10 offset-1'>
-    <%= paginate @places, 
+<div class = 'list_title col-10 offset-1'>
+  <%= paginate @places, 
     theme: 'twitter-bootstrap-4',
     pagination_class: "pagination-sm",
     nav_class: "d-inline-b" %> </div>
-
-    <% @places.each do |place| %>
-
-   <div class="booyah-box col-10 offset-1">
+<% @places.each do |place| %>
+  <div class="booyah-box col-10 offset-1">
     <h1 class = 'places_title' ><%= place.name %></h1>
-    <i><%= place.address %></i><br /><br />
-    <p><%= place.description %></p><br />
+    <i><%= place.address %></i><br />
+    <br />
+    <p><%= place.description %></p>
+    <br />
+    <% if place.user.present? %>
+      <small><%= place.user.email %></small>
+    <% end %>
   </div>
 <% end %>
