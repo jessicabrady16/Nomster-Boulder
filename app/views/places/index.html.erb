@@ -6,11 +6,13 @@
     nav_class: "d-inline-b" %> </div>
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
-    <h1 class = 'places_title' ><%= place.name %></h1>
-    <i><%= place.address %></i><br />
-    <br />
+  <div class="hb"></div>
+       <h1 class= 'places_title'><%= link_to place.name, place_path(place) %></h1>
+       <div class="hb"></div>
+    <i><%= place.address %></i>
+    <div class="hb"></div>
     <p><%= place.description %></p>
-    <br />
+    <div class="hb"></div>
     <% if place.user.present? %>
       <small> Posted by user: <%= place.user.email %></small>
     <% end %>
