@@ -17,15 +17,21 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @place = Place.find(params[:id].to_i)
-    print @place
-  end
+    @place = Place.find(params[:id])
+    end
 
+    def edit
+      @place = Place.find(params[:id])
+    end
+
+  #warning everything under this is PRIVATE!!
   private
 
   def place_params
     params.require(:place).permit(:name, :description, :address)
   end
+
+  
 
  
 end

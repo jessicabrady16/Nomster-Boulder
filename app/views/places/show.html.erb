@@ -1,12 +1,18 @@
 
 <div class="booyah-box col-10 offset-1">
-<div class="hb"></div>
-<h1 class = 'places_title'><%= @place.name %></h1>
-<div class="hb"></div>
-<i><%= @place.address %></i>
-<div class="hb"></div>
-<p><%= @place.description %></p>
+    <div class="hb"></div>
+    <h1 class = 'places_title'><%= @place.name %></h1>
+    <div class="hb"></div>
+    <i><%= @place.address %></i>
+    <div class="hb"></div>
+    <p><%= @place.description %></p>
   <div class="hb"></div>
+  <div class= "container-fluid">
+<div class="row no-gutters align-items-center">
+  <div class="col-10 user-post"> Posted by user: <%= @place.user.email %></div>
+  <div class="col-2 edit_button"><%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %> </div>
+</div>
 </div>
 
+</div>
 

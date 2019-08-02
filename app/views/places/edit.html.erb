@@ -1,6 +1,6 @@
 <div class="booyah-box col-10 offset-1">
-  <h1 class = "places_title">Enter Your Place's Details</h1>
-  <br/>
+  <h1 class= "places_title">Edit Details</h1>
+  <div class="hb"></div>
   <%= simple_form_for @place do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
@@ -8,7 +8,7 @@
 
     <br />
 
-    <%= f.submit 'Create', class: 'btn btn-primary' %>
+    <%= f.submit 'Update', class: 'btn btn-primary' %>
 
     <br />
     <br />
