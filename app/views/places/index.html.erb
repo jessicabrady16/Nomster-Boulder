@@ -13,8 +13,7 @@
     <div class="hb"></div>
     <p><%= place.description %></p>
     <div class="hb"></div>
-    <% if place.user.present? %>
-      <small> Posted by user: <%= place.user.email %></small>
-    <% end %>
+      <small> Posted by: <%= place.user.email %></small>
+    
   </div>
 <% end %>

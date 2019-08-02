@@ -36,7 +36,9 @@
   body {
     background: image_url('colorful-bokeh-texture-65.jpg');
     background-size: cover;
-    color: #260300
+    color: #260300;
+    background-repeat: no-repeat;
+    height: 100%;
   }
 
   .user-post {
@@ -67,7 +69,9 @@
     letter-spacing: -0.3px;
     color:#260300
   }
-
+ html {
+   height:100%;
+ }
   .navbar .navbar-brand {
     color:#260300;
     font-family: 'introrustg-base2line';
