@@ -7,7 +7,7 @@
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
   <div class="hb"></div>
-       <h1 class= 'places_title'><%= link_to place.name ? place.name :"Blank title here", place_path(place) %></h1>
+       <h1 class= 'places_title'><%= link_to (place.name ? place.name : "Blank title here"), place_path(place) %></h1>
        <div class="hb"></div>
     <i><%= place.address %></i>
     <div class="hb"></div>
