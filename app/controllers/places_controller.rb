@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PlacesController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authenticate_user!, only: %i[new create edit destroy update]
 
   def index
     @places = Place.all.page(params[:page]).per(5)
