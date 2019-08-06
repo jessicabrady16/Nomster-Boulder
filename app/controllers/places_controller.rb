@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit destroy update]
 
   def index
-    @places = Place.all.page(params[:page]).per(5)
+    @places = Place.all.page(params[:page]).per(5).order("name")
   end
 
   def new
@@ -17,7 +17,6 @@ class PlacesController < ApplicationController
     redirect_to root_path
       else
         render :new, status: :unprocessable_entity 
-        
       end
   end
 
@@ -53,12 +52,9 @@ class PlacesController < ApplicationController
       @place.destroy
       redirect_to root_path
 
-    
-
     end
 
-
-  #warning everything under this is PRIVATE!!
+   #warning everything under this is PRIVATE!!
   private
 
   def place_params
