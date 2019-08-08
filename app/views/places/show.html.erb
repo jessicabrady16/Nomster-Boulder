@@ -7,8 +7,33 @@
 	<div class="hb"></div>
 	<p><%= @place.description %></p>
 	<div class="hb"></div>
-  
+
+    <% if @place.latitude.present? && @place.longitude.present? %>
+    <script>
+
+      function initMap() {
+        var myLatLng = {lat: <%=@place.latitude %>, lng: <%=@place.longitude %>};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRihRNA6IP-HvcSjvqlDKW5dPAzc_7Lz8&callback=initMap">
+    </script>
+	 <div id="map"></div>
+	 <%end%>
+ <% if current_user && current_user == @place.user %>
 	<small> Posted by: <%= @place.user.email %></small>
+	<%end%>
 <div class="hb"></div>
   
   <div class= "container-fluid">
