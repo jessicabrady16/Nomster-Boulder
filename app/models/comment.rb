@@ -3,6 +3,9 @@ class Comment < ApplicationRecord
     belongs_to :place
 
 
+    validates :message, presence: true
+    validates :rating, presence: true
+
     RATINGS = {
         'One Star': '1_star',
         'Two Stars': '2_stars',
