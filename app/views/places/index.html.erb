@@ -6,6 +6,7 @@
     theme: 'twitter-bootstrap-4',
     pagination_class: "pagination-sm",
     nav_class: "d-inline-b" %> </div>
+
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
   <div class="hb"></div>
@@ -15,5 +16,18 @@
     <div class="hb"></div>
     <p><%= place.description %></p>
     <div class="hb"></div>
+  
+
+<% if place.comments.present? %>
+  <div class="col-12">
+    <blockquote>
+         <% if place.comments.last.humanized_rating.present? %>
+      <div><b><%= place.comments.last.humanized_rating %></b></div>
+      <%end%>
+      <div><%= place.comments.last.message %></div>
+      <div><small>Amazing reviews brought to you by<%= place.comments.last.user.email %></small> </div>
+    </blockquote>
   </div>
 <% end %>
+</div>
+<%end%>
