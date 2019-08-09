@@ -8,13 +8,24 @@ class CommentsController < ApplicationController
     if @comment.valid?
     redirect_to place_path(@place)
     else 
-      #render :new, status: :unprocessable_entity 
-      respond_to do |format|
 
-        format.html { redirect_to @place }
-       end
+      return render plain: 'Not Allowed', status: :forbidden
+      #render :new, status: :unprocessable_entity 
+      
     end
   end
+  
+  def destroy
+    @place = Place.find(params[:place_id])
+    @comment= Comment.find(params[:id])
+    if @comment.user != current_user
+      return render plain: 'Not Allowed', status: :forbidden
+  end
+    @comment.destroy
+    redirect_to place_path(@place)
+
+end
+
 
 
 private 
