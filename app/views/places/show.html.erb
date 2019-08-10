@@ -50,7 +50,7 @@
 </div>
 
 <% @place.photos.each do |photo| %>
-<%= image_tag("test.jpg", height: "300")  %>
+<img src='<%=photo.picture %>' />
 <div><%= photo.caption %></div> 
       <div><small>Amazing photos brought to you by <%= photo.user.email %></small> </div>
       <% if current_user && current_user == photo.user %>
