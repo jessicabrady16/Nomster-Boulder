@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
     before_action :authenticate_user!
-    mount_uploader :picture, PictureUploader
+    mount_uploaders :picture, PictureUploader
 
 
     def create
