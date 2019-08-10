@@ -14,8 +14,8 @@ class CommentsController < ApplicationController
       
     end
   end
-  
-  def destroy
+   
+               def destroy  
     @place = Place.find(params[:place_id])
     @comment= Comment.find(params[:id])
     if @comment.user != current_user
