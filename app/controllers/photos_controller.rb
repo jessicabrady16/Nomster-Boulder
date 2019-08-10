@@ -1,3 +1,4 @@
+require "carrierwave/orm/activerecord"
 class PhotosController < ApplicationController
     before_action :authenticate_user!
     mount_uploaders :picture, PictureUploader
