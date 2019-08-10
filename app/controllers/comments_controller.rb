@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     redirect_to place_path(@place)
     else 
 
-      return render plain: 'Not Allowed', status: :forbidden
+      return render plain: ' Be kind! Please rewind and enter a comment AND/OR a rating! We cannot "Nom" air!', status: :forbidden
       #render :new, status: :unprocessable_entity 
       
     end

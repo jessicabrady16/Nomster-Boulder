@@ -55,6 +55,11 @@ class PlacesController < ApplicationController
 
     end
 
+    def create_photo
+        @place = Place.find(params[:id])
+        @photo = Photo.new
+      end
+
    #warning everything under this is PRIVATE!!
   private
 
