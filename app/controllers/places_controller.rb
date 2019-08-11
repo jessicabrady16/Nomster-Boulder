@@ -16,7 +16,7 @@ class PlacesController < ApplicationController
       if @place.valid?
     redirect_to root_path
       else
-        render :new, status: :unprocessable_entity 
+        render :new, status: :unprocessable_entity
       end
   end
 
@@ -24,7 +24,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @comment = Comment.new
     @photo = Photo.new
-  
+
     end
 
     def edit
@@ -42,11 +42,11 @@ class PlacesController < ApplicationController
     end
     @place.update_attributes(place_params)
      if @place.valid?
-         redirect_to root_path
+      redirect_to place_path(@place)
      else render :new, status: :unprocessable_entity
               end
             end
-    
+
     def destroy
       @place = Place.find(params[:id])
       if @place.user != current_user
@@ -64,8 +64,8 @@ class PlacesController < ApplicationController
     params.require(:place).permit(:name, :description, :address)
   end
 
-  
 
- 
+
+
 end
 
