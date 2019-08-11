@@ -10,21 +10,21 @@
 <script>
   function initMap() {
     var myLatLng = {lat: <%=@place.latitude %>, lng: <%=@place.longitude %>};
-  
+
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
       center: myLatLng
     });
-  
+
     var marker = new google.maps.Marker({
       position: myLatLng,
       map: map,
-      title: 'Hello World!'
+      title: '<%= @place.name %>'
     });
   }
 </script>
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GEOCODER_API_KEY'] %>&callback=initMap"></script>
+  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['CLIENT_SIDE_KEY'] %>&callback=initMap"></script>
 <div id="map"></div>
 <%end%>
 <% if current_user && current_user == @place.user %>
@@ -59,7 +59,7 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <%= f.submit "Add a Picture", class: 'btn btn-primary' %>
       </div>
-      <% end %>   
+      <% end %>
     </div>
   </div>
 </div>
@@ -125,7 +125,7 @@
     Add a comment
     </button>
     <h1 class>Comments</h1>
-    
+
   </div>
   <div class="clear"></div>
   <hr/>

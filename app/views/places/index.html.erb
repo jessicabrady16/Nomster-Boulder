@@ -2,7 +2,7 @@
 
 <div class= 'list_title col-10 offset-1'> NOM NOM NOM BOULDER!</div>
 <div class = 'list_title col-10 offset-1'>
-  <%= paginate @places, 
+  <%= paginate @places,
     theme: 'twitter-bootstrap-4',
     pagination_class: "pagination-sm",
     nav_class: "d-inline-b" %> </div>
@@ -16,7 +16,11 @@
     <div class="hb"></div>
     <p><%= place.description %></p>
     <div class="hb"></div>
-  
+    <% if place.photos.present?%>
+    <img class='photo_size' src= "<%= place.photos.last.picture %>" />
+    <%end%>
+
+
 
 <% if place.comments.present? %>
   <div class="col-12">
