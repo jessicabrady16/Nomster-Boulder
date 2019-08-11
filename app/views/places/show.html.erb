@@ -121,7 +121,7 @@ span.onclick = function() {
 <div class= "row">
   <% @place.photos.each do |photo| %>
     <div class="col-sm-3">
-      <div class="thumbnail">
+      <div class="thumbnail_container">
       <!-- Trigger the Modal for Picture -->
        <img class= "thumbnail" src="<%=photo.picture %>" alt="<%= photo.caption %>" style="width:100%;max-width:300px">
         <div><%= photo.caption %></div>

@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       return render plain: ' Be kind! Please rewind and enter a comment AND/OR a rating! We cannot "Nom" air!', status: :forbidden
       #render :new, status: :unprocessable_entity
 
-    end
+          end
   end
 
     def destroy
