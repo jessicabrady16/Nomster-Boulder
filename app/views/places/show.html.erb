@@ -50,16 +50,17 @@
         </button>
         <h4 class="modal-title" id="myModalLabel">Add a photo and a caption!</h4>
       </div>
-      <div class= "modal-body">
+ <div class= "modal-body">
       <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
       <%= f.input :picture %>
       <%= f.input :caption %>
-      </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <%= f.submit "Add a Picture", class: 'btn btn-primary' %>
       </div>
       <% end %>
+       </div>
     </div>
   </div>
 </div>
@@ -90,9 +91,6 @@ thumbnail.onclick = function(){
   modal.style.display = "block";
   modalImg.src = thumbnail.src;
   captionText.innerHTML = thumbnail.alt;
-	console.log( "hi" + thumbnail.src);
-	console.log("src" + thumbnail.alt);
-	console.log("hisss" , thumbnail);
 }
 }
 
