@@ -29,7 +29,7 @@
       <div><b><%= place.comments.last.humanized_rating %></b></div>
       <%end%>
       <div><%= place.comments.last.message %></div>
-      <div><small>Amazing reviews brought to you by<%= place.comments.last.user.email %></small> </div>
+      <div><small>Amazing reviews brought to you by <%= place.comments.last.user.email %></small> </div>
     </blockquote>
   </div>
 <% end %>

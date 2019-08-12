@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
       #render :new, status: :unprocessable_entity
 
           end
-  end
+        end
 
     def destroy
     @place = Place.find(params[:place_id])
