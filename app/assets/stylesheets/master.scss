@@ -15,6 +15,11 @@
     color: #260300
   }
 
+  .carousel-inner>.carousel-item>img,
+  .carousel-inner>.carousel-item>a>img {
+    max-height: 300px;
+  }
+
   .bce {
     text-align: center;
   }
@@ -43,7 +48,7 @@
   }
 
   body {
-    background: image_url('colorful-bokeh-texture-65.jpg');
+    background: image_url('green.jpg');
     background-size: cover;
     color: #260300;
     background-repeat: no-repeat;
@@ -70,7 +75,7 @@
   }
 
   .nav-link {
-    color: #260300
+    color: #C4B1A3;
   }
 
   .invalid-feedback,
@@ -87,10 +92,10 @@
   }
 
   .navbar {
-    background: image_url('mixed-watercolor-paint-texture-6.jpg');
-    box-shadow: 0px 1px 3px #260300;
+    background: image_url('220190704_194300.jpg');
+    box-shadow: 0px 1px 3px rgb(51, 45, 45);
     letter-spacing: -0.3px;
-    color: #260300
+    color: #C4B1A3;
   }
 
   html {
@@ -98,7 +103,7 @@
   }
 
   .navbar .navbar-brand {
-    color: #260300;
+    color: #C4B1A3;
     font-family: 'introrustg-base2line';
     font-size: 40px;
   }
@@ -107,7 +112,7 @@
     color: #260300;
     font-family: 'introrustg-base2line';
     font-size: 40px;
-    font-weight: bold;
+
   }
 
   .pagination {
@@ -132,6 +137,18 @@
 
   .clear {
     clear: both;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .banner_images {
+      display: none;
+    }
+  }
+
+  .carousel-inner>.carousel-item>img,
+  .carousel-inner>.carousel-item>a>img {
+    max-height: 200px;
+    width: 100%;
   }
 
   blockquote {
