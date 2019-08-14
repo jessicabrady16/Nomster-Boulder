@@ -1,37 +1,64 @@
-
-
 <div class= 'list_title col-10 offset-1'> NOM NOM NOM BOULDER!</div>
 <div class = 'list_title col-10 offset-1'>
   <%= paginate @places,
     theme: 'twitter-bootstrap-4',
     pagination_class: "pagination-sm",
     nav_class: "d-inline-b" %> </div>
-
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <%= image_tag 'flatirons.jpg', class: 'd-block img-fluid' %>
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Boulder's iconic Flatirons</h3>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag 'boulder_overlook.jpg', class: 'd-block img-fluid' %>
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Chautauqua hiking trails offer great views of Boulder</h3>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag 'boulder_bear_peak', class: 'd-block img-fluid' %>
+      <h3>On top of Bear Peak, overlooking Boulder.</h3>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
-  <div class="hb"></div>
-       <h1 class= 'places_title'><%= link_to (place.name ? place.name : "Blank title here"), place_path(place) %></h1>
-       <div class="hb"></div>
+    <div class="hb"></div>
+    <h1 class= 'places_title'><%= link_to (place.name ? place.name : "Blank title here"), place_path(place) %></h1>
+    <div class="hb"></div>
     <i><%= place.address %></i>
     <div class="hb"></div>
     <p><%= place.description %></p>
     <div class="hb"></div>
     <% if place.photos.present?%>
-    <img class='photo_size' src= "<%= place.photos.last.picture %>" />
+      <img class='photo_size' src= "<%= place.photos.last.picture %>" />
     <%end%>
-
-
-
-<% if place.comments.present? %>
-  <div class="col-12">
-    <blockquote>
-         <% if place.comments.last.humanized_rating.present? %>
-      <div><b><%= place.comments.last.humanized_rating %></b></div>
-      <%end%>
-      <div><%= place.comments.last.message %></div>
-      <div><small>Amazing reviews brought to you by <%= place.comments.last.user.email %></small> </div>
-    </blockquote>
+    <% if place.comments.present? %>
+      <div class="col-12">
+        <blockquote>
+          <% if place.comments.last.humanized_rating.present? %>
+            <div><b><%= place.comments.last.humanized_rating %></b></div>
+          <%end%>
+          <div><%= place.comments.last.message %></div>
+          <div><small>Amazing reviews brought to you by <%= place.comments.last.user.email %></small> </div>
+        </blockquote>
+      </div>
+    <% end %>
   </div>
-<% end %>
-</div>
 <%end%>
