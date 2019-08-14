@@ -20,8 +20,15 @@
     max-height: 300px;
   }
 
+  .bce img {
+    width: 90px;
+    height: 160px;
+    margin: auto;
+  }
+
   .bce {
     text-align: center;
+
   }
 
   .places_title {
@@ -51,7 +58,7 @@
     background: image_url('green.jpg');
     background-size: cover;
     color: #260300;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     height: 100%;
   }
 
