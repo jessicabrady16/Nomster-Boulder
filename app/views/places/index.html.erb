@@ -43,7 +43,7 @@
     <p><%= place.description %></p>
     <div class="hb"></div>
     <% if place.photos.present?%>
-      <img class='photo_size' src= "<%= place.photos.last.picture %>" />
+      <img class='photo_size' src= "<%= place.photos.first.picture %>" />
     <%end%>
     <% if place.comments.present? %>
       <div class="col-12">
