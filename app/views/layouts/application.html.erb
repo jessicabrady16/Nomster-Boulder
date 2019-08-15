@@ -26,6 +26,9 @@
         <ul class="navbar-nav">
           <% if user_signed_in? %>
             <li class="nav-item">
+              <%= link_to 'My Profile', user_path(current_user), class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
               <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
             </li>
           <% else %>
@@ -52,8 +55,8 @@
   <footer>
     <div class='bce'>Nomster was crafted with love by
       <div>
-<div class= 'bce'>
-           <%= image_tag 'BCE.gif', class: 'd-block img-fluid' %>
+        <div class= 'bce'>
+          <%= image_tag 'BCE.gif', class: 'd-block img-fluid' %>
           <p>Black Cat Enterprises&#174;</p>
         </div>
       </footer>

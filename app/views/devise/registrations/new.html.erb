@@ -1,5 +1,6 @@
 <div class = "booyah-box col-10 offset-1">
-  <h2>Create your account</h2>
+  <br/>
+  <h1 class = "places_title"> Create your account:</h1>
   <br />
   <%= simple_form_for(resource, as: resource_name, url: user_registration_path()) do |f| %>
     <%= f.error_notification %>
@@ -21,5 +22,7 @@
     </div>
   <% end %>
   <hr />
-  <%= render "devise/shared/links" %>
+  <div class= 'a_links'>
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

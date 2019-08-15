@@ -1,0 +1,7 @@
+<h1>Your Dashboard</h1>
+<h2><%= @user.email %></h2>
+<h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
+
+<h3> You have contributed  <%= @comment_count %> <%= if @comment_count == 1 then 'comment' else 'comments' end %> to help other Nomster users with a total of <%= @user_5_star %> <%= if @user_5_star == 1 then 'five-star review!' else '5-star reviews!' end %> <h3>
+
+
