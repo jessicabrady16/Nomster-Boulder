@@ -1,15 +1,41 @@
+<br/>
+<br/>
 <div class ="booyah-box">
   <div class="row">
     <div class="col-4 user_av_col">
       <%= image_tag 'user_icon.png' %>
     </div>
     <div class="col-8">
-      <h1>Your Dashboard</h1>
-      <h2><%= @user.email %></h2>
-      <h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
-      <h3> You have contributed  <%= @comment_count %> <%= if @comment_count == 1 then 'comment' else 'comments' end %> to help other Nomster users with a total of <%= @user_5_star %> <%= if @user_5_star == 1 then 'five-star review!' else 'five-star reviews!' end %>
+      <h1 class= "dash_title">Your Dashboard</h1>
+      <br/>
+      <h2 class= "dash_sec"> <%= @user.email %></h2>
+      <br/>
+      <h3><u>Member Since:</u> <%= @user.created_at.strftime("%B %d, %Y") %></h3>
+      <br/>
+      <h3> You have contributed <u> <%= @comment_count %> </u> <%= if @comment_count == 1 then 'comment' else 'comments' end %> to help other Nomster users with a total of <u><%= @user_5_star %></u> <%= if @user_5_star == 1 then 'five-star review!' else 'five-star reviews!' end %>
             <h3>
             </div>
           </div>
           <div class= "clear"></div>
+        </div>
+        <br/>
+        <div class= "booyah-box">
+          <br/>
+          <h1 class="text-center dash_title">My Comments</h1>
+          <br/>
+          <br/>
+          <div class ="row">
+            <% @user.comments.each do |comment| %>
+              <div class="col-12 col-sm-6">
+                <h2 class="text-center places_title"><u><%= link_to comment.place.name, place_path(comment.place) %></u> </h2>
+                <blockquote>
+                  <% if comment.humanized_rating.present? %>
+                    <b><%= comment.humanized_rating %></b> -
+                  <% end %>
+                  <%= comment.message %>
+                  <small><%= comment.user.email %></small>
+                </blockquote>
+              </div>
+            <%end%>
+          </div>
         </div>
